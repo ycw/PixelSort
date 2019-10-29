@@ -1,0 +1,26 @@
+<!doctype html>
+
+<head>
+    <meta charset='utf8'>
+    <title>PixelSort</title>
+    <link rel='stylesheet' href='index.css'>
+    <script defer src='index.js'></script>
+</head>
+
+<body>
+    <section id='elControls'>
+        <h1>Drop an image here</h1>
+        <section class='rng'>
+            <input id='elDivisions' type='range' min=1 max=100 tabIndex=1>
+            <lable for='elDivisions'>Divisions</lable>
+            <output></output>
+        </section>
+        <section class='rng'>
+            <input id='elMaxDepth' type='range' min=1 max=100 tabIndex=2>
+            <lable for='elMaxDepth'>MaxDepth</lable>
+            <output></output>
+        </section>
+    </section>
+    <canvas id='elOld' width=0 height=0></canvas>
+    <canvas id='elSorted' width=0 height=0></canvas>
+</body>
