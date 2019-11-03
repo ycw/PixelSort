@@ -6,10 +6,11 @@ class Pixel {
   public lum: f32;
 
   constructor(ind: i32) {
-    this.r = load<u8>(ind * 4);
-    this.g = load<u8>(ind * 4 + 1);
-    this.b = load<u8>(ind * 4 + 2);
-    this.a = load<u8>(ind * 4 + 3);
+    let os:i32;
+    this.r = load<u8>(os = ind << 2);
+    this.g = load<u8>(os + 1);
+    this.b = load<u8>(os + 2);
+    this.a = load<u8>(os + 3);
     this.lum = 0.299 * this.r + 0.587 * this.g + 0.114 * this.b; 
   }
 }
@@ -21,7 +22,7 @@ export function sort(len: i32, pSz: i32, pD: u32, seed: i32): void {
   //@ts-ignore
   Math.seedRandom(seed);
 
-  const pixels = new Array<Pixel>(len / 4 | 0);
+  const pixels = new Array<Pixel>(len >> 2);
   const iL = pixels.length;
 
   for (let i = 0; i < iL; ++i) {
@@ -34,7 +35,7 @@ export function sort(len: i32, pSz: i32, pD: u32, seed: i32): void {
   let os:i32;
   for (let i = 0; i < iL; ++i) {
     p = pixels[i];
-    store<u8>(os = i * 4, p.r);
+    store<u8>(os = i << 2, p.r);
     store<u8>(os + 1, p.g);
     store<u8>(os + 2, p.b);
     store<u8>(os + 3, p.a);
