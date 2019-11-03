@@ -8,7 +8,8 @@
     "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug --memoryBase 235929600 --use Math=NativeMath",
     "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate -O3 --memoryBase 235929600 --use Math=NativeMath",
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
-    "build:glue": "webpack --config webpack.config.js"
+    "build:glue": "webpack --config webpack.config.js",
+    "build": "npm run build:glue && npm run asbuild"
   },
   "keywords": [],
   "author": "",
