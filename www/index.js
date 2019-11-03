@@ -16,7 +16,7 @@ const state = {
 
 /// Main
 (async function () {
-    state.worker = new Worker('worker.js');
+    state.worker = new Worker('www/worker.js');
     state.worker.onmessage = (ev) => {
         if (ev.data.type == 'init') {
             handleUI();

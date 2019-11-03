@@ -1,10 +1,10 @@
-importScripts('./as/dist/pixelsort.js');
+importScripts('../as/dist/pixelsort.js');
 let sorter;
 
 
 
 (async function () {
-    sorter = await PixelSort.init('./as/build/optimized.wasm');
+    sorter = await PixelSort.init('../as/build/optimized.wasm');
     postMessage({ type: 'init' });
     onmessage = (ev) => {
         const { fnName, args = [] } = ev.data;
