@@ -11,9 +11,13 @@
     "build:glue": "webpack --config webpack.config.js",
     "build": "npm run build:glue && npm run asbuild"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ycw/pixelsort.git"
+  },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "ycw",
+  "license": "MIT",
   "devDependencies": {
     "assemblyscript": "github:AssemblyScript/assemblyscript",
     "ts-loader": "^6.2.1",
