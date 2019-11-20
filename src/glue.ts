@@ -1,6 +1,4 @@
-import * as loader from './node_modules/assemblyscript/lib/loader';
-
-
+import * as loader from '../node_modules/assemblyscript/lib/loader';
 
 type API = {
     sort(len: number, pSz: number, pD: number, seed: number): void;

@@ -1,7 +1,7 @@
 module.exports = [{
     mode: 'production',
     devtool: 'source-map',
-    entry: './glue.ts',
+    entry: './src/glue.ts',
     output: {
         path: require('path').join(__dirname, './dist'),
         filename: 'pixelsort.js',
