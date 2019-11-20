@@ -6,7 +6,7 @@ let canvas;
 let isProcessing;
 
 (async function () {
-    sorter = await PixelSort.init('../../dist/optimized.wasm');
+    sorter = await PixelSort.init('../dist/optimized.wasm');
     canvas = $('canvas');
     isProcessing = false;
     handleUI();
