@@ -1,31 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
+
+<html lang="en">
 
 <head>
-    <meta charset='utf8'>
-    <title>PixelSort</title>
-    <link href='./index.css' rel='stylesheet'>
-    <script src='../dist/pixelsort.js'></script>
-    <script src='./src/index.js' defer type='module'></script>
+  <meta charset="utf8">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./index.css">
+  <script type="module" src="./index.js"></script>
+  <title>PixelSort</title>
 </head>
 
 <body>
-
-    <section class='controls'>
-        <output id='el_status'>Please drop an image here</output>
-        <label>Division
-            <input id='el_divisionCount' type='number' min=1 max=32 tabindex=1>
-        </label>
-        <label>Depth
-            <input id='el_partitionDepth' type='number' min=1 max=32 tabindex=2>
-        </label>
-        <label>Seed
-            <input id='el_seed' type='number' min=1 max=65535 tabindex=3>
-        </label>
-        <input id='el_submit' type='button' value='sort' tabindex=4 disabled>
-    </section>
-    
-    <section class='result'>
-        <canvas id='el_sorted' width=0 height=0></canvas>
-    </section>
-    
+  <label>
+    Select an image : <input type="file" accept="image/*">
+  </label>
+  <output></output>
 </body>
+
+</html>
