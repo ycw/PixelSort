@@ -2,7 +2,6 @@ import * as loader from "//cdn.jsdelivr.net/npm/@assemblyscript/loader/index.js"
 
 const elInput = document.querySelector("input");
 const elOutput = document.querySelector("output");
-const elMetrics = document.querySelector(".metrics");
 
 loader.instantiate(
   fetch("../build/optimized.wasm"), {}
