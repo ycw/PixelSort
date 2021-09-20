@@ -1,27 +1,24 @@
 {
   "name": "pixelsort",
-  "version": "1.0.0",
-  "description": "",
-  "main": "",
+  "version": "2.0.0",
+  "description": "Pixelsort WASM impl",
+  "main": "index.js",
   "scripts": {
-    "_asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug --memoryBase 235929600 --use Math=NativeMath",
-    "_asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate -O3 --memoryBase 235929600 --use Math=NativeMath",
-    "build:0": "asc assembly/index.ts -b dist/optimized.wasm --validate -O3 --memoryBase 235929600 --use Math=NativeMath",
-    "build:1": "webpack --config webpack.config.js",
-    "build": "npm run build:0 && npm run build:1"
+    "asbuild:untouched": "asc assembly/index.ts --target debug",
+    "asbuild:optimized": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
+    "build": "npm run asbuild:optimized"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ycw/pixelsort.git"
-  },
-  "keywords": [],
-  "author": "ycw",
+  "keywords": [
+    "wasm",
+    "assemblyscript"
+  ],
+  "author": "",
   "license": "MIT",
   "devDependencies": {
-    "assemblyscript": "github:AssemblyScript/assemblyscript",
-    "ts-loader": "^6.2.1",
-    "typescript": "^3.6.4",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "assemblyscript": "^0.19.16"
+  },
+  "dependencies": {
+    "@assemblyscript/loader": "^0.19.16"
   }
 }
