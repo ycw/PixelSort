@@ -1,7 +1,9 @@
 {
   "name": "pixelsort",
   "version": "2.0.0",
-  "description": "Pixelsort WASM impl",
+  "author": "ycw (https://github.com/ycw)",
+  "repository": "github:ycw/pixelsort",
+  "description": "Pixelsort WASM impl written in AssemblyScript",
   "main": "index.js",
   "scripts": {
     "asbuild:untouched": "asc assembly/index.ts --target debug",
@@ -9,16 +11,17 @@
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
     "build": "npm run asbuild:optimized"
   },
-  "keywords": [
-    "wasm",
-    "assemblyscript"
-  ],
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
     "assemblyscript": "^0.19.16"
   },
   "dependencies": {
     "@assemblyscript/loader": "^0.19.16"
-  }
+  },
+  "license": "MIT",
+  "keywords": [
+    "art",
+    "wasm",
+    "webassembly",
+    "assemblyscript"
+  ]
 }
